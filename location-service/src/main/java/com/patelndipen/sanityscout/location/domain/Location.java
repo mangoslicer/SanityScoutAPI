@@ -1,22 +1,18 @@
 package com.patelndipen.sanityscout.location.domain;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import java.io.Serializable;
 
 import javax.validation.constraints.NotNull;
 
+public class Location implements Serializable {
 
-@Document(collection = "locations")
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Location {
-
-  @Id
-  @NotNull
-  private String locationType;
+  private static final long serialVersionUID = 1L;
 
   @NotNull
   private String locationName;
+
+  @NotNull
+  private String locationType;
 
   @NotNull
   private String address;
@@ -29,6 +25,9 @@ public class Location {
 
   @NotNull
   private String[] locationLuxuries;
+
+  @NotNull
+  private String imagePath;
 
   @NotNull
   public String getLocationType() {
@@ -60,12 +59,17 @@ public class Location {
     return locationLuxuries;
   }
 
-  public void setLocationType(String locationType) {
-    this.locationType = locationType;
+  @NotNull
+  public String getImagePath() {
+    return imagePath;
   }
 
   public void setLocationName(String locationName) {
     this.locationName = locationName;
+  }
+
+  public void setLocationType(String locationType) {
+    this.locationType = locationType;
   }
 
   public void setAddress(String address) {
@@ -82,6 +86,37 @@ public class Location {
 
   public void setLocationLuxuries(String[] locationLuxuries) {
     this.locationLuxuries = locationLuxuries;
+  }
+
+  public void setImagePath(String imagePath) {
+    this.imagePath = imagePath;
+  }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int res = 1;
+    res =  prime * res + this.locationName.hashCode();
+    res = prime * res + this.locationType.hashCode();
+    res = prime * res + this.address.hashCode();
+    res = prime * res + this.openingTime.hashCode();
+    res = prime * res + this.closingTime.hashCode();
+    res = prime * res + this.locationLuxuries.hashCode();
+    res = prime * res + this.imagePath.hashCode();
+
+    return res;
+  }
+  @Override
+  public boolean equals(Object obj) {
+
+    if (obj == null) return false;
+    if (this == obj) return true;
+    if (this.getClass() == obj.getClass()) return true;
+
+    Location l = (Location) obj;
+
+    return this.locationName.equals(l.getLocationName()) && this.locationType.equals(l.getLocationType()) && this.address.equals(l.getAddress()) && this.openingTime.equals(l.getOpeningTime()) && this.closingTime.equals(l.getClosingTime()) && this.locationLuxuries.equals(l.getLocationLuxuries()) && this.imagePath.equals(l.getImagePath());
+
   }
 
 }
