@@ -1,9 +1,11 @@
 package com.patelndipen.sanityscout.location.service;
 
 import com.patelndipen.sanityscout.location.domain.Location;
+import com.patelndipen.sanityscout.location.domain.LocationPreview;
 import com.patelndipen.sanityscout.location.repository.LocationRepository;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -17,10 +19,16 @@ public class LocationServiceImpl implements LocationService {
 
   /**
    * {@inheritDoc}
-   */
+  */
   @Override
-  public List<Location> findByLocationType(String locationType) {
+  public List<LocationPreview> findByLocationType(String locationType) {
     Assert.hasLength(locationType);
-    return repository.findByLocationType(locationType);
+
+    List<LocationPreview> previews = new ArrayList<LocationPreview>();
+    for (Location l : repository.findByLocationType(locationType)) {
+      previews.add(new LocationPreview(l.getLocationName(), l.getImagePath()));
+    }
+
+    return previews;
   }
 }

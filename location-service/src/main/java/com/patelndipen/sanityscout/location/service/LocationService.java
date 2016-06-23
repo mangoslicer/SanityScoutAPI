@@ -1,6 +1,7 @@
 package com.patelndipen.sanityscout.location.service;
 
 import com.patelndipen.sanityscout.location.domain.Location;
+import com.patelndipen.sanityscout.location.domain.LocationPreview;
 
 import java.util.List;
 
@@ -12,6 +13,6 @@ public interface LocationService {
    * @param locationType
    * @return list of locations
   */
-  List<Location> findByLocationType(String locationType);
+  List<LocationPreview> findByLocationType(String locationType);
 
 }
