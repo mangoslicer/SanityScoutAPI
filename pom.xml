@@ -9,7 +9,8 @@
   <name>sanityscout</name>
 
   <modules>
-    <module>location-service</module>
+    <!--    <module>config</module> -->
+    <module>location-microservice</module>
   </modules>
 
 </project>

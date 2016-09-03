@@ -1,6 +1,6 @@
 package com.patelndipen.sanityscout.location.config;
 
-import com.patelndipen.sanityscout.location.domain.Location;
+import com.patelndipen.sanityscout.location.domain.LocationDetail;
 
 import java.util.List;
 
@@ -22,8 +22,8 @@ public class RedisConf {
   }
 
   @Bean
-  public RedisTemplate<String, Location> redisTemplate() {
-    final RedisTemplate<String, Location> template = new RedisTemplate<String, Location>();
+  public RedisTemplate<String, LocationDetail> redisTemplate() {
+    final RedisTemplate<String, LocationDetail> template = new RedisTemplate<String, LocationDetail>();
     final StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
     template.setConnectionFactory(jedisConnectionFactory());
     template.setHashKeySerializer(stringRedisSerializer);
@@ -31,4 +31,5 @@ public class RedisConf {
     template.setValueSerializer(new JdkSerializationRedisSerializer());
     return template;
   }
+
 }

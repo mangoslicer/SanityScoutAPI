@@ -1,6 +1,6 @@
 [
   {
-    "locationName": "W.E.B. Du Bois Library",
+    "locationName": "W.E.B. Du Bois Library Upper Floors",
     "locationType": "study",
     "address": "154 Hicks Way, Amherst, MA 01003",
     "openingTime": "10:00 AM",
@@ -8,22 +8,24 @@
     "locationLuxuries": [
       "computers",
       "cafe",
-      "printers",
-      "whiteboards"
+      "view"
     ],
     "imagePath": "du_bois.png"
   },
   {
-    "locationName": "Integrated Learning Center",
+    "locationName": "W.E.B. Du Bois Library Basement",
     "locationType": "study",
-    "address": " 650 N Pleasant St, Amherst, MA 01002",
+    "address": "154 Hicks Way, Amherst, MA 01003",
     "openingTime": "10:00 AM",
-    "closingTime": "11:00 PM",
+    "closingTime": "9:00 PM",
     "locationLuxuries": [
+      "printer",
+      "computers",
       "cafe",
-      "view"
+      "external monitors",
+      "comfy chairs"
     ],
-    "imagePath": "ilc.png"
+    "imagePath": "du_bois.png"
   }
 ]
 

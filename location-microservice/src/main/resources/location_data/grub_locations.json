@@ -1,0 +1,49 @@
+[
+  {
+    "locationName": "Worcester",
+    "locationType": "grub",
+    "address": "669 N Pleasant St, Amherst, MA 01003",
+    "openingTime": "7:00 AM",
+    "closingTime": "12:00 AM",
+    "locationLuxuries": [
+      "Asian Cousine",
+      "Grab'n Go"
+    ],
+    "imagePath": "worcester.png"
+  },
+  {
+    "locationName": "Franklin",
+    "locationType": "grub",
+    "address": "260 Stockbridge Rd, Amherst, MA 01003",
+    "openingTime": "7:00 AM",
+    "closingTime": "10:00 PM",
+    "locationLuxuries": [
+      "Grab'n Go",
+      "Kosher Meals"
+    ],
+    "imagePath": "frank.png"
+  },
+  {
+    "locationName": "Hampshire",
+    "locationType": "grub",
+    "address": "141 Southwest Cir, Amherst, MA 01003",
+    "openingTime": "7:00 AM",
+    "closingTime": "10:00 PM",
+    "locationLuxuries": [
+      "Circular?"
+    ],
+    "imagePath": "hamp.png"
+  },
+  {
+    "locationName": "Berkshire",
+    "locationType": "grub",
+    "address": "121 Southwest Cir, Amherst, MA 01003",
+    "openingTime": "7:00 AM",
+    "closingTime": "12:00 AM",
+    "locationLuxuries": [
+      "Grab'n Go"
+    ],
+    "imagePath": "berk.png"
+  }
+]
+

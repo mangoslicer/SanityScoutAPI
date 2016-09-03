@@ -1,23 +1,22 @@
 package com.patelndipen.sanityscout.location.domain;
 
 import javax.validation.constraints.NotNull;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.Serializable;
 
-/*
- * Restrict Location object access to only that which is required for the LocationPreview
-*/
+public class Location implements Serializable {
 
-public class LocationPreview {
+  private static final long serialVersionUID = 1L;
 
   @NotNull
-  @JsonProperty("location_name")
   private String locationName;
 
   @NotNull
-  @JsonProperty("image_path")
   private String imagePath;
 
-  public LocationPreview(String locationName, String imagePath) {
+  public Location(){
+  }
+
+  public Location(String locationName, String imagePath) {
     this.locationName = locationName;
     this.imagePath = imagePath;
   }
@@ -30,6 +29,14 @@ public class LocationPreview {
   @NotNull
   public String getImagePath() {
     return imagePath;
+  }
+
+  public void setLocationName(String locationName) {
+    this.locationName = locationName;
+  }
+
+  public void setImagePath(String imagePath) {
+    this.imagePath = imagePath;
   }
 
 }

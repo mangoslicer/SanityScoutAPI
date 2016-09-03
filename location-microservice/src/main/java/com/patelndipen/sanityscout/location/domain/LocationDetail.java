@@ -1,15 +1,13 @@
 package com.patelndipen.sanityscout.location.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
-public class Location implements Serializable {
+public class LocationDetail extends Location {
 
-  private static final long serialVersionUID = 1L;
-
-  @NotNull
-  private String locationName;
+  private static final long serialVersionUID = 2L;
 
   @NotNull
   private String locationType;
@@ -24,19 +22,11 @@ public class Location implements Serializable {
   private String closingTime;
 
   @NotNull
-  private String[] locationLuxuries;
-
-  @NotNull
-  private String imagePath;
+  private List<String> locationLuxuries;
 
   @NotNull
   public String getLocationType() {
     return locationType;
-  }
-
-  @NotNull
-  public String getLocationName() {
-    return locationName;
   }
 
   @NotNull
@@ -55,17 +45,8 @@ public class Location implements Serializable {
   }
 
   @NotNull
-  public String[] getLocationLuxuries() {
+  public List<String> getLocationLuxuries() {
     return locationLuxuries;
-  }
-
-  @NotNull
-  public String getImagePath() {
-    return imagePath;
-  }
-
-  public void setLocationName(String locationName) {
-    this.locationName = locationName;
   }
 
   public void setLocationType(String locationType) {
@@ -84,25 +65,21 @@ public class Location implements Serializable {
     this.closingTime = closingTime;
   }
 
-  public void setLocationLuxuries(String[] locationLuxuries) {
+  public void setLocationLuxuries(List<String> locationLuxuries) {
     this.locationLuxuries = locationLuxuries;
-  }
-
-  public void setImagePath(String imagePath) {
-    this.imagePath = imagePath;
   }
 
   @Override
   public int hashCode() {
     final int prime = 31;
     int res = 1;
-    res =  prime * res + this.locationName.hashCode();
+    res =  prime * res + this.getLocationName().hashCode();
     res = prime * res + this.locationType.hashCode();
     res = prime * res + this.address.hashCode();
     res = prime * res + this.openingTime.hashCode();
     res = prime * res + this.closingTime.hashCode();
     res = prime * res + this.locationLuxuries.hashCode();
-    res = prime * res + this.imagePath.hashCode();
+    res = prime * res + this.getImagePath().hashCode();
 
     return res;
   }
@@ -113,9 +90,15 @@ public class Location implements Serializable {
     if (this == obj) return true;
     if (this.getClass() == obj.getClass()) return true;
 
-    Location l = (Location) obj;
+    LocationDetail l = (LocationDetail) obj;
 
-    return this.locationName.equals(l.getLocationName()) && this.locationType.equals(l.getLocationType()) && this.address.equals(l.getAddress()) && this.openingTime.equals(l.getOpeningTime()) && this.closingTime.equals(l.getClosingTime()) && this.locationLuxuries.equals(l.getLocationLuxuries()) && this.imagePath.equals(l.getImagePath());
+    return this.getLocationName().equals(l.getLocationName()) &&
+            this.locationType.equals(l.getLocationType()) &&
+            this.address.equals(l.getAddress()) &&
+            this.openingTime.equals(l.getOpeningTime()) &&
+            this.closingTime.equals(l.getClosingTime()) &&
+            this.locationLuxuries.equals(l.getLocationLuxuries()) &&
+            this.getImagePath().equals(l.getImagePath());
 
   }
 

@@ -1,0 +1,28 @@
+[
+  {
+    "locationName": "Recreation Center",
+    "locationType": "rec",
+    "address": "161 Commonwealth Avenue, Amherst, MA 01003",
+    "openingTime": "6:00 AM",
+    "closingTime": "12:00 PM",
+    "locationLuxuries": [
+      "cafe",
+      "track",
+      "weights",
+      "basketball"
+    ],
+    "imagePath": "rec_center.png"
+  },
+  {
+    "locationName": "Totman Gym",
+    "locationType": "rec",
+    "address": "30, Eastman Ln, Amherst, MA 01003",
+    "openingTime": "?",
+    "closingTime": "??",
+    "locationLuxuries": [
+      "pool"
+    ],
+    "imagePath": "totman.png"
+  }
+]
+
