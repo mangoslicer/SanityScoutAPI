@@ -11,6 +11,7 @@
   <modules>
     <!--    <module>config</module> -->
     <module>location-microservice</module>
+    <module>prediction-microservice</module>
   </modules>
 
 </project>
